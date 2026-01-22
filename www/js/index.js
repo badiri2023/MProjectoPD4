@@ -7,7 +7,15 @@ function onDeviceReady() {
  
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     //document.getElementById('deviceready').classList.add('ready');
+
+    M.AutoInit();
+
+    // Inicializar tabs swipeables
+    var elems = document.querySelectorAll('.tabs');
+    M.Tabs.init(elems, { swipeable: true });
+
+    // Inicializar sidenav 
+    var sidenavs = document.querySelectorAll('.sidenav');
+     M.Sidenav.init(sidenavs);
 }
- 
-// init Materialize
-M.AutoInit();
+
